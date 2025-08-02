@@ -1,4 +1,53 @@
-tried to run on windows but it said cant run on windows home edition
-tried to run on linux hosted on windows but it said it cant run on wsl2
+crc on mac                                   - good
+crc in cent os 9 in virtual box on windows   - fail - need 14 gb of RAM
+crc directly on windows                      - fail - can't be windows home edition
+crc in docker image of cent os on windows    - fail - cant do crc using wsl2
 
 crc setup
+
+### miniosub2.yml 
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: miniooperatorx
+  namespace: daveioopx
+spec:
+  channel: stable
+  name: minio-object-store-operator
+  source: certified-operators
+  sourceNamespace: openshift-marketplace
+  installPlanApproval: Automatic
+
+### og.yml 
+apiVersion: operators.coreos.com/v1alpha2
+kind: OperatorGroup
+metadata:
+  name: io-op-group
+  namespace: daveioopx
+
+> oc get installplan install-d7vcw  -n daveioopx        
+NAME            CSV                                           APPROVAL    APPROVED
+install-d7vcw   minio-object-store-operator.v2025.7.1011319   Automatic   true
+
+
+> oc get csvs -n daveioopx    
+NAME                                          DISPLAY                     VERSION          REPLACES                                      PHASE
+minio-object-store-operator.v2025.7.1011319   Minio AIStor Object Store   2025.7.1011319   minio-object-store-operator.v2025.6.3065135   Installing
+
+> oc get csv minio-object-store-operator.v2025.7.1011319 -n daveioopx -o yaml | grep -i fail          
+    phase: Failed
+    reason: InstallCheckFailed
+    phase: Failed
+    reason: InstallCheckFailed
+    message: 'install failed: deployment adminjob-operator not ready before timeout:
+    phase: Failed
+    reason: InstallCheckFailed
+  message: 'install failed: deployment adminjob-operator not ready before timeout:
+  phase: Failed
+  reason: InstallCheckFailed
+
+
+
+
+
+
