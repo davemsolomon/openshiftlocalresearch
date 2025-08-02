@@ -1,1 +1,4 @@
+tried to run on windows but it said cant run on windows home edition
+tried to run on linux hosted on windows but it said it cant run on wsl2
+
 crc setup
