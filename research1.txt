@@ -5,6 +5,10 @@ crc in docker image of cent os on windows    - fail - cant do crc using wsl2
 
 crc setup
 
+#######################
+crc start
+https://console-openshift-console.apps-crc.testing/k8s/cluster/projects
+
 ### miniosub2.yml 
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
