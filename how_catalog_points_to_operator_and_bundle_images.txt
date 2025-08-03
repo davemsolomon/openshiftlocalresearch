@@ -1,4 +1,5 @@
-
+## after you load a catalog source, you get a set of packagemanifests, a single package manifest can be interrogated to give two images, one image is the actual operator and the other image is the bundle image that has yml that will be applied to the cluster
+## oc get packagemanifest minio-operator -n olm -o yaml | grep -A 4 relatedImages
 
 eval $(crc oc-env)      
 
