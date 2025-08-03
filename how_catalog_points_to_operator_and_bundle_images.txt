@@ -1,9 +1,4 @@
-the goal is to experiment with icsp
 
-rather than host a local image repo
-
-i created a free personal registry on dockerhub called davemsolomon/davemregistry
-docker push davemsolomon/davemregistry:tagname
 
 eval $(crc oc-env)      
 
@@ -67,11 +62,3 @@ drwxr-xr-x. 3 dave dave   4096 Aug  2 00:15 ..
 
 
 
-
-
-## icsp.yml
-spec:
-  repositoryDigestMirrors:
-    - mirrors:
-      - https://hub.docker.com/repository/docker/davemsolomon/davemregistry
-      source: registry.redhat.io/ocs4
