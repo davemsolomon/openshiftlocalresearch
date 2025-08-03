@@ -32,6 +32,13 @@ How do I see the pointer to the bundle image?
       - quay.io/minio/aistor/operator@sha256:1af05ea9d65bf9452e473a160074c747dd85e10b9ddda986f3d8033b24abdec3
       version: 2025.7.1011319
 
+> oc get packagemanifest minio-operator -n olm -o yaml | grep -A 4 relatedImages
+      relatedImages:
+      - quay.io/minio/operator@sha256:1a32f5143f02e22acd5f2e368d98b783c069409ee550c0ddd0972db9a386d29a
+      - quay.io/operatorhubio/minio-operator@sha256:6c87300fd4c39689bdd2dc0a98769199b2e11f282fabe056c0fa7b4bd8afbf09
+      version: 5.0.3
+
+
 
 
 ## icsp.yml
