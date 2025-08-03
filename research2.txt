@@ -6,3 +6,10 @@ i created a free personal registry on dockerhub called davemsolomon/davemregistr
 docker push davemsolomon/davemregistry:tagname
 
 eval $(crc oc-env)      
+
+## icsp.yml
+spec:
+  repositoryDigestMirrors:
+    - mirrors:
+      - https://hub.docker.com/repository/docker/davemsolomon/davemregistry
+      source: registry.redhat.io/ocs4
