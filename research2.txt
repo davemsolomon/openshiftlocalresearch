@@ -38,6 +38,12 @@ How do I see the pointer to the bundle image?
       - quay.io/operatorhubio/minio-operator@sha256:6c87300fd4c39689bdd2dc0a98769199b2e11f282fabe056c0fa7b4bd8afbf09
       version: 5.0.3
 
+Why are there two images?
+- one is like the operator metadata and one is the actual operator
+
+How can i read the operator metadata?
+
+
 
 
 
