@@ -1,0 +1,6 @@
+the goal is to experiment with icsp
+
+rather than host a local image repo
+
+i created a free personal registry on dockerhub called davemsolomon/davemregistry
+docker push davemsolomon/davemregistry:tagname
