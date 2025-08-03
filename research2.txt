@@ -44,6 +44,9 @@ Why are there two images?
 How can i read the operator metadata?
 sudo yum install skopeo
 
+skopeo copy docker://quay.io/operatorhubio/minio-operator@sha256:6c87300fd4c39689bdd2dc0a98769199b2e11f282fabe056c0fa7b4bd8afbf09 dir:./bundle-image-contents
+
+
 
 
 
