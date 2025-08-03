@@ -57,6 +57,11 @@ drwxr-xr-x. 3 dave dave   4096 Aug  2 00:15 ..
 -rw-r--r--. 1 dave dave   1937 Apr 21  2023 sts.min.io_policybindings.yaml
 -rw-r--r--. 1 dave dave    345 Apr 21  2023 sts_v1_service.yaml
 
+> dave@vbox bundle-image-contents]$ cat ./manifestsx/minio-operator.clusterserviceversion.yaml | grep image:
+                    image: quay.io/minio/operator@sha256:1a32f5143f02e22acd5f2e368d98b783c069409ee550c0ddd0972db9a386d29a
+                    image: quay.io/minio/operator@sha256:1a32f5143f02e22acd5f2e368d98b783c069409ee550c0ddd0972db9a386d29a
+
+
 
 
 
