@@ -42,9 +42,21 @@ Why are there two images?
 - one is like the operator metadata and one is the actual operator
 
 How can i read the operator metadata?
-sudo yum install skopeo
+> podman create --name bun quay.io/operatorhubio/minio-operator@sha256:6c87300fd4c39689bdd2dc0a98769199b2e11f282fabe056c0fa7b4bd8afbf09 
+> podman cp bun:/manifests ./manifestsx
+> ls -al ./manifestsx/
+total 212
+drwxr-xr-x. 2 dave dave   4096 Apr 21  2023 .
+drwxr-xr-x. 3 dave dave   4096 Aug  2 00:15 ..
+-rw-r--r--. 1 dave dave    117 Apr 21  2023 console-env_v1_configmap.yaml
+-rw-r--r--. 1 dave dave    172 Apr 21  2023 console-sa-secret_v1_secret.yaml
+-rw-r--r--. 1 dave dave    361 Apr 21  2023 console_v1_service.yaml
+-rw-r--r--. 1 dave dave 157554 Apr 21  2023 minio.min.io_tenants.yaml
+-rw-r--r--. 1 dave dave  22724 Apr 21  2023 minio-operator.clusterserviceversion.yaml
+-rw-r--r--. 1 dave dave    451 Apr 21  2023 operator_v1_service.yaml
+-rw-r--r--. 1 dave dave   1937 Apr 21  2023 sts.min.io_policybindings.yaml
+-rw-r--r--. 1 dave dave    345 Apr 21  2023 sts_v1_service.yaml
 
-skopeo copy docker://quay.io/operatorhubio/minio-operator@sha256:6c87300fd4c39689bdd2dc0a98769199b2e11f282fabe056c0fa7b4bd8afbf09 dir:./bundle-image-contents
 
 
 
