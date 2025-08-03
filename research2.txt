@@ -26,6 +26,11 @@ oc apply -f ./catalogsource.yml
 
 
 How do I see the pointer to the bundle image?
+> oc get packagemanifest minio-object-store-operator -o yaml | grep -A 4 relatedImages
+      relatedImages:
+      - registry.connect.redhat.com/minio/minio-aistor-object-store-operator@sha256:c10f94b9d121a0c520aa0bf059d047cfa8bfb71dcef9eda8fbd6a1353885d110
+      - quay.io/minio/aistor/operator@sha256:1af05ea9d65bf9452e473a160074c747dd85e10b9ddda986f3d8033b24abdec3
+      version: 2025.7.1011319
 
 
 
