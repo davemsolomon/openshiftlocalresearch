@@ -7,6 +7,28 @@ docker push davemsolomon/davemregistry:tagname
 
 eval $(crc oc-env)      
 
+
+
+### catalogsource.yml 
+  apiVersion: operators.coreos.com/v1alpha1
+  kind: CatalogSource
+  metadata:
+    name: operatorhubio-catalog
+    namespace: olm
+  spec:
+    sourceType: grpc
+    image: quay.io/operatorhubio/catalog:latest
+    displayName: OperatorHub Community Operators
+    publisher: OperatorHub.io
+
+oc apply -f ./catalogsource.yml
+
+
+
+How do I see the pointer to the bundle image?
+
+
+
 ## icsp.yml
 spec:
   repositoryDigestMirrors:
