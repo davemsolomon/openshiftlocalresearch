@@ -42,6 +42,8 @@ Why are there two images?
 - one is like the operator metadata and one is the actual operator
 
 How can i read the operator metadata?
+sudo yum install skopeo
+
 
 
 
