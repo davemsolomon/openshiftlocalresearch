@@ -10,3 +10,6 @@ spec:
     - "quay.io/jetstack"
   additionalTrustedCA:
     name: ""
+
+oc get pods | grep test-block
+test-block                                                  0/1     ErrImagePull   0          40s
