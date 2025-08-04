@@ -1,0 +1,15 @@
+message: '0/1 nodes are available: 1 node(s) had untolerated taint {node.kubernetes.io/disk-pressure:
+      }. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.'
+    reason: Unschedulable
+    status: "False"
+    type: PodScheduled
+
+
+> crc config get disk-size
+Configuration property 'disk-size' is not set. Default value '31' is used
+
+> crc config set disk-size 75 
+Changes to configuration property 'disk-size' are only applied when the CRC instance is started.
+If you already have a running CRC instance, then for this configuration change to take effect, stop the CRC instance with 'crc stop' and restart it with 'crc start'.
+
+> crc stop
