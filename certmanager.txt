@@ -39,3 +39,11 @@ NAME                                       READY   STATUS    RESTARTS   AGE
 cert-manager-5457f4fb65-xwdq8              1/1     Running   0          112s
 cert-manager-cainjector-78cbd44c9f-85bpb   1/1     Running   0          2m11s
 cert-manager-webhook-6b5545dc5-xzg29       1/1     Running   0          2m12s
+
+> oc get packagemanifest cert-manager -n redhat-marketplace -o yaml | grep -A 4 relatedImages
+      relatedImages:
+      - quay.io/community-operator-pipeline-prod/cert-manager@sha256:d8037cd7653b257737cec92308042cf71d559c6c2886d07b1879b5e432eeebcd
+      - quay.io/jetstack/cert-manager-cainjector:v1.16.5
+      - quay.io/jetstack/cert-manager-controller:v1.16.5
+      - quay.io/jetstack/cert-manager-webhook:v1.16.5
+
