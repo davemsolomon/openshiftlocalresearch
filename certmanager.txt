@@ -29,4 +29,13 @@ spec:
 NAME                                          DISPLAY                                       VERSION          REPLACES                                      PHASE
 cert-manager-operator.v1.16.1                 cert-manager Operator for Red Hat OpenShift   1.16.1           cert-manager-operator.v1.16.0                 Succeeded
 minio-object-store-operator.v2025.7.1011319   Minio AIStor Object Store                     2025.7.1011319   minio-object-store-operator.v2025.6.3065135   Installing
-  
+
+> oc get pods -n cert-manager-operator 
+NAME                                                        READY   STATUS    RESTARTS   AGE
+cert-manager-operator-controller-manager-86f89ddb68-x7d6z   1/1     Running   0          2m10s
+
+> oc get pods -n cert-manager         
+NAME                                       READY   STATUS    RESTARTS   AGE
+cert-manager-5457f4fb65-xwdq8              1/1     Running   0          112s
+cert-manager-cainjector-78cbd44c9f-85bpb   1/1     Running   0          2m11s
+cert-manager-webhook-6b5545dc5-xzg29       1/1     Running   0          2m12s
