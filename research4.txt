@@ -1,0 +1,11 @@
+i loaded the operator hub cat source but the packages arent showing up..
+
+> oc get pods -n olm
+NAME                          READY   STATUS    RESTARTS        AGE
+operatorhubio-catalog-k7jtt   1/1     Running   2 (7m50s ago)   5h57m
+
+> oc get services -n olm          
+NAME                    TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)     AGE
+operatorhubio-catalog   ClusterIP   10.217.5.119   <none>        50051/TCP   18h
+
+
