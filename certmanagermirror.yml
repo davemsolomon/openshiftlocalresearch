@@ -1,0 +1,9 @@
+apiVersion: operator.openshift.io/v1alpha1
+kind: ImageContentSourcePolicy
+metadata:
+  name: cert-manager-mirror
+spec:
+  repositoryDigestMirrors:
+  - mirrors:
+    - ghcr.io/davemsolomon/cert-manager-controller
+    source: quay.io/jetstack/cert-manager-controller
