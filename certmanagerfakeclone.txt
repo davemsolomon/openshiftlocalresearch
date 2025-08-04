@@ -15,11 +15,7 @@ Login Succeeded!
 
 podman tag hello-world:latest ghcr.io/davemsolomon/cert-manager-controller:v.1.16.5
 
-podman push ghcr.io/davemsolomon/cert-manager-controller:latest
-Getting image source signatures
-Copying blob 2114fc8b7058 done   | 
-Copying config 5dd467fce5 done   | 
-Writing manifest to image destination
+podman push ghcr.io/davemsolomon/cert-manager-controller:v.1.16.5
 
 go here to make the package public
 https://github.com/users/davemsolomon/packages/container/package/cert-manager-controller
