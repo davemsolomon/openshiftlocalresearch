@@ -1,3 +1,6 @@
+setup a classic token with package write access
+https://github.com/settings/tokens
+
 podman login ghcr.io
 Username: davemsolomon
 Password:
@@ -10,3 +13,6 @@ Getting image source signatures
 Copying blob 2114fc8b7058 done   | 
 Copying config 5dd467fce5 done   | 
 Writing manifest to image destination
+
+go here to make the package public
+https://github.com/users/davemsolomon/packages/container/package/cert-manager-controller
