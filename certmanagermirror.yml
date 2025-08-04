@@ -8,3 +8,10 @@ spec:
   - mirrors:
     - ghcr.io/davemsolomon/cert-manager-controller
     source: quay.io/jetstack/cert-manager-controller
+
+> oc run test-mirror --image=quay.io/jetstack/cert-manager-controller:v.1.16.5
+pod/test-mirror created
+
+> oc get pod test-mirror                                                      
+NAME          READY   STATUS    RESTARTS   AGE
+test-mirror   0/1     Pending   0          9s
