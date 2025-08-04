@@ -8,4 +8,12 @@ operatorhubio-catalog-k7jtt   1/1     Running   2 (7m50s ago)   5h57m
 NAME                    TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)     AGE
 operatorhubio-catalog   ClusterIP   10.217.5.119   <none>        50051/TCP   18h
 
+> oc get services -n openshift-marketplace                          
+NAME                           TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)             AGE
+certified-operators            ClusterIP   10.217.5.154   <none>        50051/TCP           24d
+community-operators            ClusterIP   10.217.4.133   <none>        50051/TCP           24d
+marketplace-operator-metrics   ClusterIP   10.217.4.255   <none>        8383/TCP,8081/TCP   24d
+redhat-marketplace             ClusterIP   10.217.5.39    <none>        50051/TCP           24d
+redhat-operators               ClusterIP   10.217.4.66    <none>        50051/TCP           24d
+
 
