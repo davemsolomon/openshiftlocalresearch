@@ -15,3 +15,10 @@ pod/test-mirror created
 > oc get pod test-mirror                                                      
 NAME          READY   STATUS    RESTARTS   AGE
 test-mirror   0/1     Pending   0          9s
+
+> oc get pod test-mirror -o yaml
+       message: 'Back-off pulling image "quay.io/jetstack/cert-manager-controller:v.1.16.5":
+          ErrImagePull: initializing source docker://quay.io/jetstack/cert-manager-controller:v.1.16.5:
+          registry quay.io/jetstack/cert-manager-controller is blocked in /etc/containers/registries.conf
+          or /root/.config/containers/registries.conf.d'
+        reason: ImagePullBackOff
