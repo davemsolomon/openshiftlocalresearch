@@ -11,8 +11,13 @@ spec:
   additionalTrustedCA:
     name: ""
 
-oc get pods | grep test-block
+> oc run test-block --image=quay.io/jetstack/cert-manager-controller:latest
+
+> oc get pods | grep test-block
 test-block                                                  0/1     ErrImagePull   0          40s
+
+
+> oc get pod test-block -o yaml
 
  containerStatuses:
   - image: quay.io/jetstack/cert-manager-controller:latest
