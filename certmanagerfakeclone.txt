@@ -1,3 +1,10 @@
+oc get packagemanifest cert-manager -n redhat-marketplace -o yaml | grep -A 4 relatedImages
+      relatedImages:
+      - quay.io/community-operator-pipeline-prod/cert-manager@sha256:d8037cd7653b257737cec92308042cf71d559c6c2886d07b1879b5e432eeebcd
+      - quay.io/jetstack/cert-manager-cainjector:v1.16.5
+      - quay.io/jetstack/cert-manager-controller:v1.16.5
+      - quay.io/jetstack/cert-manager-webhook:v1.16.5
+
 setup a classic token with package write access
 https://github.com/settings/tokens
 
@@ -6,7 +13,7 @@ Username: davemsolomon
 Password:
 Login Succeeded!
 
-podman tag hello-world:latest ghcr.io/davemsolomon/cert-manager-controller:latest
+podman tag hello-world:latest ghcr.io/davemsolomon/cert-manager-controller:v.1.16.5
 
 podman push ghcr.io/davemsolomon/cert-manager-controller:latest
 Getting image source signatures
