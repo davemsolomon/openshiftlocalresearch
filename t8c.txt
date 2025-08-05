@@ -56,3 +56,6 @@ spec:
 > oc get pod test-mirror-turbo                                                      
 
 > oc get pod test-mirror-turbo -o yaml
+
+crc stop
+crc start
