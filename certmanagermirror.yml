@@ -22,3 +22,16 @@ test-mirror   0/1     Pending   0          9s
           registry quay.io/jetstack/cert-manager-controller is blocked in /etc/containers/registries.conf
           or /root/.config/containers/registries.conf.d'
         reason: ImagePullBackOff
+
+I created a digestmirror with cmmirror.yml so i should be trying to pull an image with a digest and not a tag
+> oc run test-mirrordigest --image=quay.io/jetstack/cert-manager-controller@sha256:51c872598c67cfad7520e78cc51c5516306c95b01c51b5e6fe2990d8c7370378
+pod/test-mirrordigest created
+
+    state:
+      waiting:
+        message: 'Back-off pulling image "quay.io/jetstack/cert-manager-controller@sha256:51c872598c67cfad7520e78cc51c5516306c95b01c51b5e6fe2990d8c7370378":
+          ErrImagePull: initializing source docker://quay.io/jetstack/cert-manager-controller@sha256:51c872598c67cfad7520e78cc51c5516306c95b01c51b5e6fe2990d8c7370378:
+          (Mirrors also failed: [ghcr.io/davemsolomon/cert-manager-controller@sha256:51c872598c67cfad7520e78cc51c5516306c95b01c51b5e6fe2990d8c7370378:
+          reading manifest sha256:51c872598c67cfad7520e78cc51c5516306c95b01c51b5e6fe2990d8c7370378
+          in ghcr.io/davemsolomon/cert-manager-controller: manifest unknown]): quay.io/jetstack/cert-manager-controller@sha256:51c872598c67cfad7520e78cc51c5516306c95b01c51b5e6fe2990d8c7370378:
+
