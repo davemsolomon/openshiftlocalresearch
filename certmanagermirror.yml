@@ -35,3 +35,7 @@ pod/test-mirrordigest created
           reading manifest sha256:51c872598c67cfad7520e78cc51c5516306c95b01c51b5e6fe2990d8c7370378
           in ghcr.io/davemsolomon/cert-manager-controller: manifest unknown]): quay.io/jetstack/cert-manager-controller@sha256:51c872598c67cfad7520e78cc51c5516306c95b01c51b5e6fe2990d8c7370378:
 
+podman tag hello-world:latest ghcr.io/davemsolomon/cert-manager-controller@sha256:51c872598c67cfad7520e78cc51c5516306c95b01c51b5e6fe2990d8c7370378
+Error: ghcr.io/davemsolomon/cert-manager-controller@sha256:51c872598c67cfad7520e78cc51c5516306c95b01c51b5e6fe2990d8c7370378: tag by digest not supported
+
+
