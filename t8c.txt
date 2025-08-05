@@ -11,15 +11,11 @@ Username: davemsolomon
 Password:
 Login Succeeded!
 
-podman tag ???/etcd@??? ghcr.io/davemsolomon/etcd:latest
-podman push ghcr.io/davemsolomon/etcd:latest
-
-podman tag ???/operator@??? ghcr.io/davemsolomon/operator:latest
-podman push ghcr.io/davemsolomon/operator:latest
+podman tag registry.connect.redhat.com/turbonomic/t8c-operator-bundle@sha256:75627e532f7df351f7e74267ca4bcf7eadd5f7cdadb5863fb256726419d4d9a2 ghcr.io/davemsolomon/t8c-operator-bundle:latest
+podman push ghcr.io/davemsolomon/t8c-operator-bundle:latest
 
 go here to make the package public
-https://github.com/users/davemsolomon/packages/container/package/operator
-https://github.com/users/davemsolomon/packages/container/package/etcd
+https://github.com/users/davemsolomon/packages/container/package/t8c-operator-bundle
 
 ## Do the block
 ## etcd_block.yml
