@@ -3,7 +3,7 @@
 > oc get packagemanifest etcd-operator -o yaml | grep -A 4 relatedImages
 
 ## Do the block
-## etcdblock.yml
+## etcd_block.yml
 apiVersion: config.openshift.io/v1
 kind: Image
 metadata:
@@ -15,3 +15,14 @@ spec:
   additionalTrustedCA:
     name: ""
 
+## implement a mirror
+## etcd_mirror.yml
+apiVersion: operator.openshift.io/v1alpha1
+kind: ImageContentSourcePolicy
+metadata:
+  name: etcd-mirror
+spec:
+  repositoryDigestMirrors:
+  - mirrors:
+    - ghcr.io/davemsolomon/etcd-operator
+    source: quay.io/etcd-operator
