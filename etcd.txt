@@ -1,1 +1,4 @@
 
+Find out which images i need to mirror:
+> oc get packagemanifest etcd-operator -o yaml | grep -A 4 relatedImages
+
