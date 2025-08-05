@@ -24,5 +24,8 @@ metadata:
 spec:
   repositoryDigestMirrors:
   - mirrors:
-    - ghcr.io/davemsolomon/etcd-operator
-    source: quay.io/etcd-operator
+    - ghcr.io/davemsolomon/etcd-operator/etcd
+    source: quay.io/etcd-operator/etcd
+  - mirrors:
+    - ghcr.io/davemsolomon/etcd-operator/operator
+    source: quay.io/etcd-operator/operator
