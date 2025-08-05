@@ -2,6 +2,21 @@
 ## Find out which images i need to mirror:
 > oc get packagemanifest etcd-operator -o yaml | grep -A 4 relatedImages
 
+podman login ghcr.io
+Username: davemsolomon
+Password:
+Login Succeeded!
+
+podman tag ???/etcd@??? ghcr.io/davemsolomon/etcd:latest
+podman push ghcr.io/davemsolomon/etcd:latest
+
+podman tag ???/operator@??? ghcr.io/davemsolomon/operator:latest
+podman push ghcr.io/davemsolomon/operator:latest
+
+go here to make the package public
+https://github.com/users/davemsolomon/packages/container/package/operator
+https://github.com/users/davemsolomon/packages/container/package/etcd
+
 ## Do the block
 ## etcd_block.yml
 apiVersion: config.openshift.io/v1
