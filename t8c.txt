@@ -11,14 +11,23 @@ Username: davemsolomon
 Password:
 Login Succeeded!
 
+podman login registry.connect.redhat.com
+Username: davemsolomon114
+Password: 
+Login Succeeded!
+
+podman pull registry.connect.redhat.com/turbonomic/t8c-operator-bundle@sha256:75627e532f7df351f7e74267ca4bcf7eadd5f7cdadb5863fb256726419d4d9a2
+
 podman tag registry.connect.redhat.com/turbonomic/t8c-operator-bundle@sha256:75627e532f7df351f7e74267ca4bcf7eadd5f7cdadb5863fb256726419d4d9a2 ghcr.io/davemsolomon/t8c-operator-bundle:latest
 podman push ghcr.io/davemsolomon/t8c-operator-bundle:latest
 
-go here to make the package public
+go here to make the package public but also here is the interesting question,
+did the sha stay the same when i pushed the image up to ghcr.io...?
+this is what the following website says the sha is - sha256:75627e532f7df351f7e74267ca4bcf7eadd5f7cdadb5863fb256726419d4d9a2 - it does match!!!
 https://github.com/users/davemsolomon/packages/container/package/t8c-operator-bundle
 
 ## Do the block
-## etcd_block.yml
+## turbo_block.yml
 apiVersion: config.openshift.io/v1
 kind: Image
 metadata:
@@ -26,18 +35,18 @@ metadata:
 spec:
   registrySources:
     blockedRegistries:
-    - "quay.io/etcd-operator"
+    - "registry.connect.redhat.com/turbonomic"
   additionalTrustedCA:
     name: ""
 
 ## implement a mirror
-## etcd_mirror.yml
+## turbo_mirror.yml
 apiVersion: operator.openshift.io/v1alpha1
 kind: ImageContentSourcePolicy
 metadata:
-  name: etcd-mirror
+  name: turbo-mirror
 spec:
   repositoryDigestMirrors:
   - mirrors:
-    - ghcr.io/davemsolomon/etcd-operator
-    source: quay.io/etcd-operator
+    - ghcr.io/davemsolomon
+    source: registry.connect.redhat.com/turbonomic
