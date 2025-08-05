@@ -66,3 +66,10 @@ test-mirror-turbo   0/1     ImagePullBackOff   0          15s
 
 crc stop
 crc start
+
+     waiting:
+        message: 'Back-off pulling image "registry.connect.redhat.com/turbonomic/t8c-operator-bundle@sha256:75627e532f7df351f7e74267ca4bcf7eadd5f7cdadb5863fb256726419d4d9a2":
+          SignatureValidationFailed: image pull failed for registry.connect.redhat.com/turbonomic/t8c-operator-bundle@sha256:75627e532f7df351f7e74267ca4bcf7eadd5f7cdadb5863fb256726419d4d9a2
+          because the signature validation failed: Source image rejected: Running
+          image docker://registry.connect.redhat.com/turbonomic/t8c-operator-bundle@sha256:75627e532f7df351f7e74267ca4bcf7eadd5f7cdadb5863fb256726419d4d9a2
+          is rejected by policy.'
