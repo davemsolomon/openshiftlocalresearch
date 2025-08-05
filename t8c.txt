@@ -90,3 +90,13 @@ pod/test-mirror-turbo-bad-sha created
           reading manifest sha256:75627e532f7df351f7e74267ca4bcf7eadd5f7cdadb5863fb256726419d4d9ab
           in ghcr.io/davemsolomon/t8c-operator-bundle: manifest unknown]): registry.connect.redhat.com/turbonomic/t8c-operator-bundle@sha256:75627e532f7df351f7e74267ca4bcf7eadd5f7cdadb5863fb256726419d4d9ab:
           registry registry.connect.redhat.com/turbonomic is blocked in /etc/containers/registries.conf
+
+
+in an attempt to see if i could get the "signature" to copy, i deleted the image out of the ghcr.io registry
+and then recreated it using skopeo copy
+
+skopeo copy docker://registry.connect.redhat.com/turbonomic/t8c-operator-bundle@sha256:75627e532f7df351f7e74267ca4bcf7eadd5f7cdadb5863fb256726419d4d9a2 docker://ghcr.io/davemsolomon/t8c-operator-bundle:latest
+Getting image source signatures
+Copying blob dc28e765db35 skipped: already exists  
+Copying config 6c062f8f24 done   | 
+Writing manifest to image destination
