@@ -13,3 +13,5 @@ make tidy
 make build
 
 sudo cp oc-mirror /usr/local/bin
+
+Settings > Privacy and Security > Developer Tools > Terminal
