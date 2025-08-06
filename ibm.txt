@@ -2,6 +2,7 @@ https://github.com/IBM/ibm-pak
 
 https://github.com/IBM/ibm-pak/releases/download/v1.18.2/oc-ibm_pak-darwin-amd64.tar.gz
 
+https://github.com/IBM/ibm-pak?tab=readme-ov-file
 
 cp oc-ibm_pak-darwin-amd64 /usr/local/bin/oc-ibm_pak
 
