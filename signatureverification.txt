@@ -1,1 +1,3 @@
+https://www.redhat.com/en/blog/signing-and-verifying-container-images
 
+The transfer of the container image from the development image repository to a repository within the production environment can be done in a number of different ways. However, note that when a container image is copied from repository to repository, it will get a new sha256 image digest and repository location and, therefore, any signature created against the image in the old location will not be valid in the new location. 
