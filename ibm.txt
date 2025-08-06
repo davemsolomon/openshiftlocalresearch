@@ -1,3 +1,6 @@
+https://ibm.github.io/cloud-pak/assets/html/ibm-cp-fncm-case-table.html
+https://github.com/IBM/cloud-pak/tree/master/repo/case/ibm-cp-fncm-case/
+
 https://github.com/IBM/ibm-pak
 
 https://github.com/IBM/ibm-pak/releases/download/v1.18.2/oc-ibm_pak-darwin-amd64.tar.gz
