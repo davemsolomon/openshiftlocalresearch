@@ -1,7 +1,8 @@
 https://github.com/ibm-ecm/container-samples/blob/5.7.0/scripts/loadimages.py
 
-https://docs.redhat.com/en/documentation/openshift_container_platform/4.14/html/disconnected_installation_mirroring/installing-mirroring-disconnected#installation-oc-mirror-installing-plugin_installing-mirroring-disconnected
+https://go.dev/doc/install
 
-https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/latest/oc-mirror.rhel9.tar.gz
+https://github.com/openshift/oc-mirror?tab=readme-ov-file#getting-started
+git clone https://github.com/openshift/oc-mirror.git
 
 sudo cp oc-mirror /usr/local/bin
