@@ -1,4 +1,5 @@
 https://github.com/ibm-ecm/container-samples
+https://github.com/ibm-ecm/container-samples/blob/5.7.0/scripts/loadimages.py
 
 https://ibm.github.io/cloud-pak/assets/html/ibm-cp-fncm-case-table.html
 https://github.com/IBM/cloud-pak/tree/master/repo/case/ibm-cp-fncm-case/
