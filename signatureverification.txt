@@ -4,3 +4,15 @@ The transfer of the container image from the development image repository to a r
 
 https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/nodes/nodes-sigstore-using
 The sigstore project enables developers to sign-off on what they build and administrators to verify signatures and monitor workflows at scale. With the sigstore project, signatures can be stored in the same registry as the build images. A second server is not needed. The identity piece of a signature is tied to the OpenID Connect (OIDC) identity through the Fulcio certificate authority, which simplifies the signature process by allowing key-less signing. Additionally, sigstore includes Rekor, which records signature metadata to an immutable, tamper-resistant ledger.
+
+https://catalog.redhat.com/software/containers/turbonomic/t8c-operator-bundle/5f6cfb152937386820421964
+
+https://developers.redhat.com/blog/2019/10/29/verifying-signatures-of-red-hat-container-images#mirroring_red_hat_container_images_to_a_private_registry
+Mirroring Red Hat container images to a private registry
+Many organizations do not allow their servers to download application content directly from the Internet, regardless of whether the content originates from a trusted vendor and is digitally signed. These organizations typically deploy a private registry server internally and require that its servers, and sometimes its developers, to only pull container images from this location.
+
+To emulate that scenario, I will copy the UBI container image to my personal account at Quay.io and configure my container runtime to check image signatures for images stored there. I will store my detached signatures into a local folder to avoid the need to set up an HTTP server.
+
+When you copy container images between registry servers, you cannot just copy their detached signatures, too. These signatures are tied to the full container image reference, which includes the registry name. So, the signatures from Red Hat become invalid for their copies on a private registry.
+
+One way to solve that issue is to use a private GPG key that your organization owns. Then, you copy the public GPG key to any server and developer workstation that needs it. To keep things simple, I will use my personal GPG key pair that I already use to sign email. If it is your first time working with GPG, see the references section [3] for a nice tutorial about generating your GPG key pair.
