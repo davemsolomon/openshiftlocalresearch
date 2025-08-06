@@ -5,4 +5,8 @@ https://go.dev/doc/install
 https://github.com/openshift/oc-mirror?tab=readme-ov-file#getting-started
 git clone https://github.com/openshift/oc-mirror.git
 
+make clean
+make tidy
+make build
+
 sudo cp oc-mirror /usr/local/bin
