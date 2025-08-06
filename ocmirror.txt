@@ -6,6 +6,7 @@ https://github.com/openshift/oc-mirror?tab=readme-ov-file#getting-started
 git clone https://github.com/openshift/oc-mirror.git
 
 brew install pkg-config
+brew install gpgme
 
 make clean
 make tidy
