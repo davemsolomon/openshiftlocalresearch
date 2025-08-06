@@ -1,3 +1,6 @@
 https://www.redhat.com/en/blog/signing-and-verifying-container-images
 
 The transfer of the container image from the development image repository to a repository within the production environment can be done in a number of different ways. However, note that when a container image is copied from repository to repository, it will get a new sha256 image digest and repository location and, therefore, any signature created against the image in the old location will not be valid in the new location. 
+
+https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/nodes/nodes-sigstore-using
+The sigstore project enables developers to sign-off on what they build and administrators to verify signatures and monitor workflows at scale. With the sigstore project, signatures can be stored in the same registry as the build images. A second server is not needed. The identity piece of a signature is tied to the OpenID Connect (OIDC) identity through the Fulcio certificate authority, which simplifies the signature process by allowing key-less signing. Additionally, sigstore includes Rekor, which records signature metadata to an immutable, tamper-resistant ledger.
