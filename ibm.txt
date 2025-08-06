@@ -5,6 +5,11 @@ https://github.com/IBM/ibm-pak/releases/download/v1.18.2/oc-ibm_pak-darwin-amd64
 
 cp oc-ibm_pak-darwin-amd64 /usr/local/bin/oc-ibm_pak
 
+Open Terminal, and enter:
+❯ spctl developer-mode enable-terminal
+Go to System Preferences -> Security & Privacy -> Privacy Tab -> Developer Tools -> Terminal : Enable
+Restart all terminals
+
 oc ibm-pak --help 
 Deploy IBM Cloud Paks in a disconnected environment or generate image mirror manifest files
 
