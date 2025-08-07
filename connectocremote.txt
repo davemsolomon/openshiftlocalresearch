@@ -1,9 +1,8 @@
-on the linux box run..
-ssh -L 1234:127.0.0.1:6443 david@192.168.1.211
+on the linux box create the socks tunnel to the mac
+ssh -D 1080 -q -N david@192.168.1.211
 
-192.168.1.211 is the IP of the mac running openshift
+on the linux box setup the proxy
+export HTTPS_PROXY=socks5://localhost:1080
 
-from the linux box 
-oc login 127.0.0.1:1234 
-
-traffic to 127.0.0.1:1234 on the linux box will be forwarded to 127.0.0.1:6443 on the mac
+Get a login string from the web console on the mac
+./oc login --token=sha256~*************** --server=https://api.crc.testing:6443
