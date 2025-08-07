@@ -6,3 +6,6 @@ export HTTPS_PROXY=socks5://localhost:1080
 
 Get a login string from the web console on the mac
 ./oc login --token=sha256~*************** --server=https://api.crc.testing:6443
+
+OMG!
+Logged into "https://api.crc.testing:6443" as "developer" using the token provided.
