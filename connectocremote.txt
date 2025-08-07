@@ -2,7 +2,11 @@ sudo vi /etc/pf.conf
 
 put this after the existing apple rdr
 rdr on en0 inet proto tcp from any to 192.168.1.211 port 6443 -> 127.0.0.1 port 6443
+
+put this one at the end
 pass inet proto tcp from any to 127.0.0.1 port 6443
+
 sudo pfctl -f /etc/pf.conf
+
 sudo pfctl -e
 sudo pfctl -s info
