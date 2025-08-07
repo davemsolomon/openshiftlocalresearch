@@ -1,12 +1,9 @@
-sudo vi /etc/pf.conf
+on the linux box run..
+ssh -L 1234:127.0.0.1:6443 david@192.168.1.211
 
-put this after the existing apple rdr
-rdr on en0 inet proto tcp from any to 192.168.1.211 port 6443 -> 127.0.0.1 port 6443
+192.168.1.211 is the IP of the mac running openshift
 
-put this one at the end
-pass inet proto tcp from any to 127.0.0.1 port 6443
+from the linux box 
+oc login 127.0.0.1:1234 
 
-sudo pfctl -f /etc/pf.conf
-
-sudo pfctl -e
-sudo pfctl -s info
+traffic to 127.0.0.1:1234 on the linux box will be forwarded to 127.0.0.1:6443 on the mac
