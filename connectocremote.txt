@@ -4,8 +4,9 @@ ssh -D 1080 -q -N david@192.168.1.211
 on the linux box setup the proxy
 export HTTPS_PROXY=socks5://localhost:1080
 
-Get a login string from the web console on the mac
+Get a login string from the web console on the mac for kubeadmin
 ./oc login --token=sha256~*************** --server=https://api.crc.testing:6443
 
 OMG!
-Logged into "https://api.crc.testing:6443" as "developer" using the token provided.
+./oc get pods --all-namespaces | wc -l
+70
