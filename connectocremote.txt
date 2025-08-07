@@ -1,0 +1,7 @@
+sudo vi /etc/pf.conf
+
+rdr pass inet proto tcp from any to 192.168.1.211 port 6443 -> 127.0.0.1 port 6443
+pass inet proto tcp from any to 127.0.0.1 port 6443
+sudo pfctl -f /etc/pf.conf
+sudo pfctl -e
+sudo pfctl -s info
