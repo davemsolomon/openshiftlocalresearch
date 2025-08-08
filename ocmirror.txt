@@ -1,17 +1,16 @@
 https://github.com/ibm-ecm/container-samples/blob/5.7.0/scripts/loadimages.py
 
-https://go.dev/doc/install
+podman login ghcr.io
+Username: davemsolomon
+Password:
+Login Succeeded!
 
-https://github.com/openshift/oc-mirror?tab=readme-ov-file#getting-started
-git clone https://github.com/openshift/oc-mirror.git
+podman login registry.connect.redhat.com
+Username: davemsolomon114
+Password: 
+Login Succeeded!
 
-brew install pkg-config
-brew install gpgme
+podman pull registry.connect.redhat.com/turbonomic/t8c-operator-bundle@sha256:75627e532f7df351f7e74267ca4bcf7eadd5f7cdadb5863fb256726419d4d9a2
 
-make clean
-make tidy
-make build
-
-sudo cp oc-mirror /usr/local/bin
-
-Settings > Privacy and Security > Developer Tools > Terminal
+podman tag registry.connect.redhat.com/turbonomic/t8c-operator-bundle@sha256:75627e532f7df351f7e74267ca4bcf7eadd5f7cdadb5863fb256726419d4d9a2 ghcr.io/davemsolomon/t8c-operator-bundle:latest
+podman push ghcr.io/davemsolomon/t8c-operator-bundle:latest
