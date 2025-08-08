@@ -17,6 +17,7 @@ mirror:
   additionalImages:
     - name: registry.connect.redhat.com/turbonomic/t8c-operator-bundle:latest
 
+### Should I have done this oc mirror --apply-release-image-signature ?
 dave@vbox openshift-client-linux-amd64-rhel9-4.19.7]$ ./oc mirror --config imageset.yml docker://ghcr.io/davemsolomon
 W0807 23:15:48.750928    3999 mirror.go:86] 
 
