@@ -10,9 +10,16 @@ Username: davemsolomon114
 Password: 
 Login Succeeded!
 
-podman pull registry.connect.redhat.com/turbonomic/t8c-operator-bundle@sha256:75627e532f7df351f7e74267ca4bcf7eadd5f7cdadb5863fb256726419d4d9a2
+apiVersion: mirror.openshift.io/v1alpha2
+kind: ImageSetConfiguration
+metadata:
+  name: turbonomic-mirror
+spec:
+  mirror:
+    additionalImages:
+    - name: registry.connect.redhat.com/turbonomic/t8c-operator-bundle:latest
 
-podman tag registry.connect.redhat.com/turbonomic/t8c-operator-bundle@sha256:75627e532f7df351f7e74267ca4bcf7eadd5f7cdadb5863fb256726419d4d9a2 ghcr.io/davemsolomon/t8c-operator-bundle:latest
-podman push ghcr.io/davemsolomon/t8c-operator-bundle:latest
+> oc-mirror --config imagesetconfig.yaml docker://ghcr.io/davemsolomon
+
 
 > oc run test-mirror-turbo --image=registry.connect.redhat.com/turbonomic/t8c-operator-bundle@sha256:75627e532f7df351f7e74267ca4bcf7eadd5f7cdadb5863fb256726419d4d9a2
