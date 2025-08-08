@@ -1,0 +1,4 @@
+oc apply -f ./turbo_block.yml
+oc apply -f ./turbo_mirror.yml 
+
+oc run test-mirror-turbo --image=registry.connect.redhat.com/turbonomic/t8c-operator-bundle@sha256:41387cc5e9a049259364022588f187922e2b02c49b13787f91720ed3844f14c7
