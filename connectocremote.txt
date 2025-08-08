@@ -4,6 +4,8 @@ ssh -D 1080 -q -N david@192.168.1.211
 on the linux box setup the proxy
 export HTTPS_PROXY=socks5://localhost:1080
 
+ssh david@192.168.1.211 cat /Users/david/occonnect.txt
+
 Get a login string from the web console on the mac for kubeadmin
 ./oc login --token=sha256~*************** --server=https://api.crc.testing:6443
 
