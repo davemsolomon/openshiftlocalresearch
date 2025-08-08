@@ -10,16 +10,45 @@ Username: davemsolomon114
 Password: 
 Login Succeeded!
 
+## imageset.yml 
 apiVersion: mirror.openshift.io/v1alpha2
 kind: ImageSetConfiguration
-metadata:
-  name: turbonomic-mirror
-spec:
-  mirror:
-    additionalImages:
+mirror:
+  additionalImages:
     - name: registry.connect.redhat.com/turbonomic/t8c-operator-bundle:latest
 
-> oc-mirror --config imagesetconfig.yaml docker://ghcr.io/davemsolomon
+dave@vbox openshift-client-linux-amd64-rhel9-4.19.7]$ ./oc mirror --config imageset.yml docker://ghcr.io/davemsolomon
+W0807 23:15:48.750928    3999 mirror.go:86] 
+
+⚠️  oc-mirror v1 is deprecated (starting in 4.18 release) and will be removed in a future release - please migrate to oc-mirror --v2
+
+Checking push permissions for ghcr.io
+Creating directory: oc-mirror-workspace/src/publish
+Creating directory: oc-mirror-workspace/src/v2
+Creating directory: oc-mirror-workspace/src/charts
+Creating directory: oc-mirror-workspace/src/release-signatures
+backend is not configured in imageset.yml, using stateless mode
+backend is not configured in imageset.yml, using stateless mode
+No metadata detected, creating new workspace
+error image list []
+ghcr.io/
+  davemsolomon/turbonomic/t8c-operator-bundle
+    blobs:
+      registry.connect.redhat.com/turbonomic/t8c-operator-bundle sha256:5d15396f626d76ada3afadae78d5b45fc0b350d031c4f5ff8498c18b0d08063b 3.314KiB
+      registry.connect.redhat.com/turbonomic/t8c-operator-bundle sha256:2b75b78e630e84a07890debc87e60eea6f83e7bbbacc656b338769bb89d88c39 31.7KiB
+    manifests:
+      sha256:41387cc5e9a049259364022588f187922e2b02c49b13787f91720ed3844f14c7 -> latest
+  stats: shared=0 unique=2 size=35.01KiB ratio=1.00
+
+phase 0:
+  ghcr.io davemsolomon/turbonomic/t8c-operator-bundle blobs=2 mounts=0 manifests=1 shared=0
+
+info: Planning completed in 1.39s
+uploading: ghcr.io/davemsolomon/turbonomic/t8c-operator-bundle sha256:2b75b78e630e84a07890debc87e60eea6f83e7bbbacc656b338769bb89d88c39 31.7KiB
+sha256:41387cc5e9a049259364022588f187922e2b02c49b13787f91720ed3844f14c7 ghcr.io/davemsolomon/turbonomic/t8c-operator-bundle:latest
+info: Mirroring completed in 3.11s (11.52kB/s)
+Writing image mapping to oc-mirror-workspace/results-1754622957/mapping.txt
+Writing ICSP manifests to oc-mirror-workspace/results-1754622957
 
 
 > oc run test-mirror-turbo --image=registry.connect.redhat.com/turbonomic/t8c-operator-bundle@sha256:75627e532f7df351f7e74267ca4bcf7eadd5f7cdadb5863fb256726419d4d9a2
